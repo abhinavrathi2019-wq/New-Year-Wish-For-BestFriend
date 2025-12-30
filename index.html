@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year Best Friend 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  height:100vh;
+  font-family:'Poppins',sans-serif;
+  color:black;
+  background:linear-gradient(-45deg,#ffd1dc,#ffb6c1,#ffc0cb,#ffd1dc);
+  background-size:400% 400%;
+  animation:bgMove 14s ease infinite;
+  overflow:hidden;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.page{
+  width:100%;
+  height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:30px;
+  animation:fadeZoom 1.2s ease;
+}
+.page.active{display:flex;}
+
+@keyframes fadeZoom{
+  from{opacity:0;transform:scale(0.85);}
+  to{opacity:1;transform:scale(1);}
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:3em;
+  animation:pulse 1.5s infinite alternate;
+}
+@keyframes pulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
+}
+
+h2{font-size:1.8em;margin-top:10px;}
+
+p{
+  font-size:1.1em;
+  margin-top:15px;
+  max-width:900px;
+  line-height:1.8;
+}
+
+button{
+  margin-top:25px;
+  padding:12px 35px;
+  border:none;
+  border-radius:30px;
+  background:black;
+  color:pink;
+  cursor:pointer;
+}
+
+.photo{
+  width:260px;
+  border-radius:25px;
+  box-shadow:0 0 30px hotpink;
+  animation:float 3.5s infinite;
+  margin-bottom:15px;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-18px);}
+  100%{transform:translateY(0);}
+}
+
+.nav{
+  position:fixed;
+  bottom:20px;
+  width:100%;
+  text-align:center;
+}
+
+.fireworks,.hearts{
+  position:fixed;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.spark{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:hotpink;
+  border-radius:50%;
+  animation:explode 2s linear;
+}
+@keyframes explode{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-10vh);opacity:0;}
+}
+
+.heart{
+  position:absolute;
+  font-size:18px;
+  color:hotpink;
+  animation:heartFall 6s linear;
+}
+@keyframes heartFall{
+  from{transform:translateY(-10vh);opacity:1;}
+  to{transform:translateY(100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="fireworks"></div>
+<div class="hearts"></div>
+
+<!-- PAGE 1 -->
+<section class="page active">
+  <h1>🎉 Happy New Year 🎉</h1>
+  <h2>To My Best Friend 💖</h2>
+  <button onclick="nextPage()">Start 🎊</button>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <h1>You Are Special 🌸</h1>
+  <p>A best friend like you makes life happier and lighter.</p>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <img src="photo.JPG" class="photo">
+  <h2>Always Smiling 😊</h2>
+  <p>Your smile spreads positivity everywhere.</p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <h1>Why You’re Amazing ✨</h1>
+  <p>Kind • Supportive • Honest • Always there</p>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+  <h1>Fireworks Time 🎆</h1>
+  <p>Because a friend like you deserves celebration.</p>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+  <h1>Cheers to Friendship 🥂</h1>
+  <p>More memories, laughter, and inside jokes.</p>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page">
+  <h1>New Year Wishes 🌟</h1>
+  <p>Happiness, success, peace, and good health.</p>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page">
+  <h1>Always Remember 💗</h1>
+  <p>You are appreciated more than you know.</p>
+</section>
+
+<!-- PAGE 9 -->
+<section class="page">
+  <h1>A Note for My Best Friend 💌</h1>
+  <p>
+As the New Year begins, I just want to thank you for being such an important part of my life. 
+A best friend like you is rare, and I feel truly lucky to have you. You have always been there 
+through laughter, tough days, and moments when words were not needed.
+
+Your support, honesty, and positive energy make every situation better. You remind me to smile, 
+to stay strong, and to enjoy the little moments in life. In this New Year, I wish you endless happiness, 
+good health, success in everything you do, and peace in your heart.
+
+May this year bring you exciting opportunities, unforgettable memories, and reasons to be proud of yourself. 
+No matter where life takes us, our friendship will always remain special. 
+Thank you for being you and for making life brighter just by being around.
+
+Happy New Year to my best friend — here’s to another year of friendship, fun, and beautiful memories.
+  </p>
+</section>
+
+<!-- PAGE 10 -->
+<section class="page">
+  <h1>🎊 Happy New Year 🎊</h1>
+  <h2>Best Friends Forever 💖</h2>
+</section>
+
+<div class="nav">
+  <button onclick="prevPage()">⬅</button>
+  <button onclick="nextPage()">➡</button>
+</div>
+
+<script>
+let pages=document.querySelectorAll(".page");
+let index=0;
+
+function showPage(i){
+  pages.forEach(p=>p.classList.remove("active"));
+  pages[i].classList.add("active");
+}
+function nextPage(){index=(index+1)%pages.length;showPage(index);}
+function prevPage(){index=(index-1+pages.length)%pages.length;showPage(index);}
+
+const fireworks=document.querySelector(".fireworks");
+setInterval(()=>{
+  const s=document.createElement("div");
+  s.className="spark";
+  s.style.left=Math.random()*100+"vw";
+  fireworks.appendChild(s);
+  setTimeout(()=>s.remove(),2000);
+},150);
+
+const hearts=document.querySelector(".hearts");
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤";
+  h.style.left=Math.random()*100+"vw";
+  hearts.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
